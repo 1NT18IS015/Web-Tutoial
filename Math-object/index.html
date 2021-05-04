@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Math Object</title>
+</head>
+<body>
+    <center>
+    <p id="a">Click here to enter the number</p>
+    <button id="b">press here to find math object</button><br>
+    <p id="ab"></p>
+    <script>
+        var xy=document.getElementById("b");
+        xy.addEventListener("click",fun1);
+        var p=new Number();
+        
+        function fun1(){
+            p=new Number(prompt("Enter the number",""));
+            var r;
+            r=Math.round(p);
+            var f;
+            f=Math.floor(p);
+            var c;
+            c=Math.ceil(p);
+            var s;
+            s=Math.sign(p);
+            var sq;
+            sq=Math.sqrt(p);
+            var p;
+            po=Math.pow(p,2);
+            var a;
+            a=Math.abs(p);
+            var si;
+            si=Math.sin(p);
+            var c;
+            co=Math.cos(p);
+            var t;
+            t=Math.tan(p);
+            var ran;
+            ran=Math.random();
+            var l;
+            l=Math.log(p);
+            var te;
+            te=p.toExponential();
+           // var fix;
+            //fix=p.toFixed();
+            var pre;
+            pre=p.toPrecision(3);
+            var sin;
+            sin=Math.cos(p * Math.PI / 180);
+            //var st;
+            //st=p.toString();
+            //var v;
+            //v=p.valueOf();
+
+            document.getElementById("ab").innerHTML="The number entered is: "+p+"<br><br> The nearest integer to the given number is:"+r+"<br><br> Floor of "+p+" is: "+f+"<br><br> Ceil of "+p+" is: "+c+"<br><br> Sign of "+p+" is: "+s+"<br><br> Absolute value of "+p+" is: "+a+"<br><br> Square root of "+p+" is: "+sq+"<br><br> Square of "+p+" is: "+po+"<br><br>  Sin of "+p+" is: "+si+"<br><br> cos of "+p+" is: "+co+"<br><br> tan of "+p+" is: "+t+"<br><br> log of "+p+" is: "+l+"<br><br> Random number is :"+ran+"<br><br> To Exponential :"+te+/*"<br> To Fixed :"+fix+*/"<br><br> To Precision :"+pre;//+"<br> To String :"+st+"<br> To Valueof :"+v;
+
+        }
+    </script>
+    </center>
+</body>
+</html>
