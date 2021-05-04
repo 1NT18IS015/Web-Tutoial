@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function doMath(){
+            var inputNum1=document.form1.input1.value;
+            var result = Math.pow(inputNum1,2);
+            document.form1.answer.value = result;
+        }
+        </script>
+    </head>
+    <body>
+        <CENTER>
+        <form name=form1>
+            <br>
+            <br>
+            <br>
+            This is to fidn square of a number.
+            <br>
+            <br>
+            
+            Enter Number:
+            <input type="text" name="input1" size=10>
+            <input type="button" value="Calculate" onClick='doMath()'>
+            <br>
+            The square is:
+            <input type="text" name="answer" size=20>
+        </form>
+        </CENTER>
+    </body>
+</html>
