@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Regular Expressionso</title>
+        <style>
+            body 
+                {
+                    background-color: yellow;
+                 }
+            
+            button{
+                background-color: rgb(55, 193, 211);
+            }
+        </style>
+</head>
+<body>
+    <b><div style="background-color: rgb(250, 254, 255);width: 70%;padding-left: 3cm;margin:auto;border-style: solid;border-width:1px;border-color: rgb(255, 196, 220);"></b>
+    <p>1. For the given array,filter all elements that do not contain e. </p>
+    <p> items = ['goal','new','user','sit','eat','dinner'] </p>
+    <button onclick="func1()">Click</button>
+    <p id="output1" style="background-color: rgb(179, 243, 238) ;"></p>
+    </div>
+ 
+   <div style="background-color: rgb(250, 254, 255);width:70%;padding-left: 3cm;margin:auto;border-style: solid;border-width:1px;border-color: rgb(255, 196, 220);">
+   <p>2. For the given array,filter all elements containing both n and e. </p>
+   <p> items = ['goal','new','user','sit','eat','dinner'] </p>
+   <button onclick="func2()">Click</button>
+   <p id="output2" style="background-color: rgb(179, 243, 238) ;"></p>
+   </div>
+
+    <div style="background-color: rgb(250, 254, 255);width:70%;padding-left: 3cm;margin:auto;border-style: solid;border-width:1px;border-color: rgb(255, 196, 220);">
+    <p>3. For the given input array,filter all elements that start with den or end with ly</p>
+    <p> items = ['lovely', '1\ndentist', '2 lonely', 'eden', 'fly\n','dent'] </p>
+    <button onclick="func3()">Click</button>
+    <p id="output3" style="background-color: rgb(179, 243, 238) ;"></p>
+    </div>
+
+
+   <div style="background-color: rgb(250, 254, 255);width:70%;padding-left: 3cm;margin:auto;border-style: solid;border-width:1px;border-color: rgb(255, 196, 220);">
+   <p>4. For the given input array,replace hand with x for all words that start with hand followed by atleast one word character</p>
+   <p>items = ['handed', 'hand', 'handy', 'unhanded', 'handle', 'hand-2']</p>
+   <button onclick="func4()">Click</button>
+   <p id="output4" style="background-color: rgb(179, 243, 238) ;"></p>
+   </div>
+
+
+   <div style="background-color: rgb(250, 254, 255);width:70%;padding-left: 3cm;margin:auto;border-style: solid;border-width:1px;border-color: rgb(255, 196, 220);">
+   <p>5. For the given input strings,replace all occurrences of removed or reed or received or refused with x </p>
+   <p>"refused reed redo received"</p>
+   <button onclick="func5()">Click</button>
+   <p id="output5" style="background-color: rgb(179, 243, 238) ;"></p>
+   </div>
+
+
+   <div style="background-color: rgb(250, 254, 255);width:70%;padding-left: 3cm;margin:auto;border-style: solid;border-width:1px;border-color: rgb(255, 196, 220);">
+   <p>6. Replace all occurences of \e with e </p>
+   <p>" th\\er\\e ar\\e common asp\\ects among th\\e alt\\ernations"</p>
+   <button onclick="func6()">Click</button>
+   <p id="output6" style="background-color: rgb(179, 243, 238) ;"></p>
+   </div>
+
+   <script>
+      function func1(){
+        let items = ['goal', 'new', 'user', 'sit', 'eat', 'dinner']
+        var pat=/e/gi
+        const res1=items.filter(item=>!pat.test(item))
+        document.getElementById("output1").innerHTML=res1
+      }
+
+      function func2(){
+       let items = ['goal', 'new', 'user', 'sit', 'eat', 'dinner']
+       var pat1=new RegExp(/^([a-z]*)e([a-z]*)n([a-z]*)$/);
+       var pat2=new RegExp(/^([a-z]*)n([a-z]*)e([a-z]*)$/);
+       var final=new RegExp(pat1.source+ "|" + pat2.source);
+       const res2=items.filter(item=>final.test(item))
+       document.getElementById("output2").innerHTML=res2
+      }
+     
+     function func3(){
+       let items = ['lovely', '1\ndentist', '2 lonely', 'eden', 'fly\n','dent']
+       const pat1=new RegExp(/^den\w*/)
+       const pat2=new RegExp(/\w*ly$/)
+       var final=new RegExp(pat1.source+ "|" + pat2.source);
+       const res3=items.filter(item=>final.test(item))
+       document.getElementById("output3").innerHTML=res3
+     }
+   function func4(){
+     let items = ['handed', 'hand', 'handy', 'unhanded', 'handle', 'hand-2']
+     const patt=/hand/gi
+     patt.compile(patt)
+     const res4=items.map(item=>item.replace(patt,"x"))
+     document.getElementById("output4").innerHTML=res4
+   }
+
+   function func5(){
+     let str="refused reed redo received"
+     const patt=/removed|reed|received|refused/g 
+     document.getElementById("output5").innerHTML=str.replace(patt,"x") 
+   }
+
+      function func6(){
+       var str=" th\\er\\e ar\\e common asp\\ects among th\\e alt\\ernations"
+       var p=/\\e/g
+       p.compile(p)
+       document.getElementById("output6").innerHTML=str.replace(p,'e')
+      }
+     
+</script>
+</body>
+</html>
