@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>  
+    <style>
+        body{
+            background-image: url(https://www.w3schools.com/w3images/notebook.jpg);
+            background-size: cover;
+        }
+        h2{
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+        }    
+    </style>
+    <head>
+        <title>This is forms</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body >    
+        <h2 style="color:chocolate"> Enter the details in form.</h2>
+            <form>
+            First Name<input type="text" name="FirstName"> <br>
+            Last Name<input type="text" name="LastName"> <br>           
+            Enter the password<input type="password" name="password">
+        
+        <br>
+        <br>
+        <br>
+           <h3> Education</h3>
+            <input type="checkbo}x" name="Education" value="PUC">PUC <input type="checkbox" name="Education" value="School">School   <input type="checkbox" name="Education" value="Degree">Degree
+            <br>
+            <h3><h3>Select the Gender</h3> 
+            <input type="radio" name="gender" value="Male" checked>Male <input type="radio" name="gender" value="Female">Female <br>
+            <br>
+            <h3>Choose blood Group</h3>
+            <select name="Blood Group">
+                <option value="O+">o +ve</option>
+                <option value="O-">o -ve</option>
+                <option value="A+">A +ve</option>
+                <option value="A+">A -ve</option>
+            </select>
+            <br>
+            <br>
+        
+            <input type="submit" onclick="myFun()" value="SubmitForm"> <input type="reset"  onclick="myFun2()" value="Reset Form">
+        </form>
+        <script>
+                function myFun()
+                    {
+                        confirm("Form is submitted");
+
+                    }
+                function myFun2()
+                {
+                    alert("Form is reset");
+                }    
+            </script>
+        </form>
+    </body>
+</html>

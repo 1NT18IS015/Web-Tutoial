@@ -1,0 +1,28 @@
+<html>
+<body>
+<script>
+var x = Math.floor(Math.random() * 3) + 1;
+var turns = 5;
+var hint = 'Guess my number, 1-10!';
+
+while (turns > 0) {
+  var guess = prompt(hint +
+      ' You have ' + turns + ' guesses left.');
+  if (!guess) break;
+  guess = Number(guess);
+  if (guess == x) {
+    document.write('<p>YOU WIN!</p>' +
+      '<p><img src=https://www.google.com/search?q=trophy+gif+html&tbm=isch&source=iu&ictx=1&fir=Q8UJ0b1f7o4YxM%252CVM9uCHrlEzRSFM%252C_&vet=1&usg=AI4_-kQJrajqkIj3LMnWkbIC9H8e7PnM9g&sa=X&ved=2ahUKEwjFqIDS3tnvAhWlzDgGHVcICekQ9QF6BAgNEAE#imgrc=Q8UJ0b1f7o4YxM>');
+    turns = 0;
+  } else {
+    hint = 'Nope.';
+    if (guess < x) hint += ' Too small!';
+    if (guess > x) hint += ' Too big!';
+    turns = turns - 1;
+  }
+}
+alert('The secret number was ' + x + '.');
+</script>
+</body>
+</html>
+​

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+        <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap" rel="stylesheet">
+    <title>Table #2</title>
+    <style>
+        .p1{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size:large;
+            font-size-adjust: initial ;
+            font-style: italic;
+        }
+        .p2{
+            font-family:"Sofia",sans-serif;
+            font-style: oblique;
+            color:red;
+        }
+        .b1{
+            background-color: beige;
+        }
+        .p3{
+            font-family: 'Kalam', cursive;
+            font-size: x-large;
+            color: orange
+
+        }
+        
+        th{
+            padding: 15px;
+            background-color: seagreen;
+            color: black;
+            border:2.5px solid maroon;
+            border-radius: 25px ;
+            padding: 25px;
+        }
+        td{
+            padding: 30px;
+            background-color: gray;
+            color:navy;
+            border-radius: 25px;
+            border: 2.5px solid black;
+            padding: 25px;
+        }
+        table{
+            border-collapse:collapse ;
+            padding:25px
+        }
+
+        div{
+            width: 100px;
+            height: 25px;
+            background-color: blueviolet;
+            transition: width 1s;
+
+        }
+        div:hover{
+            width: 25px;
+        }
+    </style>
+    <body class="b1">
+            <link rel="stylesheet" href="style.css">
+            <center>
+                <table border="2px" style="width:35%"
+                >
+                    <tr>
+                        <th>USN</th>
+                        <th>Name</th>
+                        <th>Cgpa</th>
+                    </tr>
+
+                    <tr>
+                        <td>1NT18IS015</td>
+                        <td>Aditya N Bhatt</td>
+                        <td>7.1</td>
+                    </tr>
+
+                    <tr>
+                            <td>1NT18IS018</td>
+                            <td>Aishwarya N </td>
+                            <td>4.1</td>
+                        </tr>
+                </table>
+
+                <p class="p1">A paragraph is a series of related 
+                    sentences developing a central idea, 
+                    called the topic. Paragraphs add one 
+                    idea at a time to your broader argument.</p>
+            <h2>JavaScript alert</h2>
+                <br>
+                <br>
+
+                <marquee width="40%" direction="up" height="30%" >
+                    <p class="p2">Older browsers may not support all the HTML5 
+                    entities in the table below.
+                    Chrome and Opera have good support, and IE 11+ and Firefox 35+ 
+                    support all the entities.</p>
+                </marquee>
+                <br>
+            <h3 class=p3>सुप्रभात जनता</h3>
+            <button onclick="myFun()">Try it out</button>
+                
+            <h1>
+                this is a transition box thingie.<br> <h3>hover effect,hold on the \
+                    box below 
+                    and it will shrink<br></h3>
+                    <div></div>
+            </h1>
+            <script>
+                function myFun()
+                    {
+                        confirm("this is an alert box");
+                    }
+            </script>
+            </center>
+        </head>
+    </body>
+</html>

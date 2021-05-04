@@ -1,0 +1,17 @@
+body {
+  background-image: url(http://www.learningaboutelectronics.com/images/Guess-a-number-from-1-to-10.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+h1 {
+  color: black
+}
+h2 {
+  color: Crimson
+}
+p {
+  color: darkblue
+}
+button {
+  color: Blue
+}
