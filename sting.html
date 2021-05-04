@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            background-color: blanchedalmond;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String </title>
+</head>
+<body>  
+    <CENTER>
+    <p id="a">Click to enter the string</p>
+    <button id="b">Click</button><br>
+    <p id="ab"></p>
+    <div>
+        
+        <button id="d">Length of the String : </button><br>
+        <p id="c"></p>
+        <p id="e">Enter the String to be Searched</p>
+        <input type="text" id="f" value="" >
+        <button id="g">Search</button>
+        <p id="x"></p>
+        <p id="m"></p>     
+        <p id="i">Enter The Starting and Ending Position</p>
+        <input type="number" id="j">
+        <input type="number" id="k">
+        <button id="h">Slice</button>
+        <p id="y"></p>
+        <p>Enter the text to be replaced</p>
+        <input type="text" id="p">
+        <input type="text" id="q">
+        <button id="r">New String</button>
+        <p id="s"></p>
+    </div>
+    <script>
+        var xy=document.getElementById("b");
+        xy.addEventListener("click",fun1);
+        var p=""
+        function fun1(){
+            p=prompt("Enter the string","");
+            document.getElementById("ab").innerHTML="String is : "+p;
+
+        }
+        var cd=document.getElementById("d");
+        cd.addEventListener("mouseover", fun2);
+        function fun2(){
+            var sln=p.length;
+            document.getElementById("c").innerHTML="Length is : "+sln;
+        }
+        var fg=document.getElementById("g");
+        fg.addEventListener("click", fun3);
+        function fun3(){
+            var sr=document.getElementById("f").value;
+            var res=p.search(sr);
+            if(res!=-1){
+            document.getElementById("x").innerHTML="'"+sr+"' is Found in the position :"+res;
+            }
+            else{
+                document.getElementById("x").innerHTML=str+" Not found";
+            }
+            var up=p.toUpperCase();
+            var low=p.toLowerCase();
+            document.getElementById("m").innerHTML="LowerCase :"+low+"<br><br>UpperCase :"+up;
+        }
+        var hi=document.getElementById("h");
+        hi.addEventListener("click", fun4);
+        function fun4(){
+            var jk=document.getElementById("j").value;
+            var kj=document.getElementById("k").value;
+            var sl=p.slice(jk,kj);
+            document.getElementById("y").innerHTML="String from position "+jk+" to "+kj+" is : "+sl;
+        }
+        var rs=document.getElementById("r");
+        rs.addEventListener("mouseleave", fun5);
+        function fun5(){
+            var text1=document.getElementById("p").value;
+            var text2=document.getElementById("q").value;
+            var text=p.replace(text1,text2);
+            document.getElementById("s").innerHTML="String after replace is : "+text;
+        }
+    </script>
+    </CENTER>
+</body>
+</html>
