@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">  
+    <title>Welcome to Bank System</title>
+    <style>
+     .mainHeading
+     {
+         background: coral;
+         height: 100px; width: 100%;
+         position: fixed;  
+     }
+     a{
+       text-decoration: none;
+       color: white;
+     }
+     .firstHeading
+     {
+        text-align: center;
+        margin-top: 2%;
+     }
+     .second
+     {
+         text-align: center;
+         font-family: sans-serif;
+         font-weight: 600;
+     }
+     table {
+     font-family: arial, sans-serif;
+     border-collapse: collapse;
+     width: 80%;
+     margin-left: auto;
+  margin-right: auto; 
+     }
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 17px;
+  padding: 10px;
+  width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+ 
+input[type=text], select, textarea {
+  width: 70%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0 ;
+  display: inline-block;
+  font-weight: 700;
+}
+
+button[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+button[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-left: auto; margin-right: auto;
+  width: 600px;
+  margin-top: 4%;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+}
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.closebtn:hover {
+  color: black;
+}
+.alert.success {background-color: #4CAF50;}
+
+.containerHeading
+{
+   background-color: rgb(110, 188, 190);
+   margin-top:2%;
+   margin-left:34%;
+   width: 600px; height: 40px;
+   position: absolute;
+   text-align: center;
+   border-radius: 20px;
+}
+ footer {
+  text-align: center;
+  padding: 2px;
+  background-color: DarkSalmon;
+  color: white;
+}
+.aditya:hover
+{
+    background: cadetblue;
+    padding: 15px 15px 15px 15px;
+    border-radius: 20px;
+}
+ 
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+    </style>
+
+    
+</head>
+<body>    
+    <div class="mainHeading">
+        <h1 class="firstHeading">Welcome to Bank Management System</h1>
+    </div> 
+    <br><br><br><br><br><br>
+    <h1 class="second">Customers Record</h1>
+    <table>
+        <tr>
+          <th>Name</th>
+          <th>User ID</th>
+          <th>Account Number</th>
+          <th>Address</th>
+          <th>Contact</th>
+          <th>Balance</th>
+          <th>Operations</th>
+        </tr>
+        
+        {{#each records}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{myid}}</td>
+          <td>{{account}}</td>
+          <td>{{address}}</td>
+          <td>{{account}}</td>
+          <td>{{balance}}</td>
+          <td><button class="button" style="vertical-align:middle"><span><a href="/transfer">Transfer </a></span></button></td> 
+        </tr>
+   {{/each}}
+
+      </table>
+
+      <h3 class="containerHeading">Open Your Account</h3>
+      <div class="container">
+               
+        <form action="/" method="POST">
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">First Name</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="fname" placeholder="Your name..">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="myid">Enter Id</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="myid" name="myid" placeholder="Aadhaar , PAN and VOTER">
+          </div>
+        </div>
+
+      <div class="row">
+        <div class="col-25">
+            <label for="account">Account Number</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="account" name="account" placeholder="Account Number">
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+            <label for="address">City</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="address" name="address" placeholder="Enter your City">
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+            <label for="contact">Mobile Number</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="contact" name="contact" placeholder="Mobile Number">
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+            <label for="balance">Balance</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="balance" name="balance" placeholder="Enter Balance in Figures">
+          </div>
+      </div>
+
+        <div class="row">
+          <button type="submit" >Submit</button>
+        </div>
+        </form>
+<br>
+     {{#if check}}
+        <div class="alert success">
+          <span class="closebtn">&times;</span>  
+          <strong>{{title}}</strong> {{success}}.
+        </div>
+     {{/if}}
+      </div>
+<br><br>
+      <footer>
+        <h1>Made By. <span>Aditya N Bhatt</span></h1>
+        <h1>Follow me on <a href="https://www.linkedin.com/in/adityabhatt015/" class="aditya" title="See my Profile Here">Linkedin</a></h1>
+      </footer>
+ 
+</body>
+</html>
